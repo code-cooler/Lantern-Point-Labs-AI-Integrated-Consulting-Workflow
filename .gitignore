@@ -1,0 +1,20 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Vim swap files
+*.swp
+*.swo
+
+# Temp files
+*~
+.#*
+\#*\#
+*.bak
+*.tmp
+
+# Logs
+*.log 

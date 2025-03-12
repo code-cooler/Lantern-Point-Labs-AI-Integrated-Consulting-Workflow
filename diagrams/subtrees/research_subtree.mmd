@@ -1,0 +1,42 @@
+flowchart TD
+    %% Research & Problem Definition Subtree
+    
+    %% Main node connecting back to main diagram
+    mainFlow(["Back to Main Flow"]) -.-> research[Research & Problem Definition]
+    
+    %% Detailed steps within Research phase (limited to ~5 nodes)
+    research --> dataCollection[Data Collection]
+    dataCollection --> stakeholderInterviews[Stakeholder Interviews]
+    stakeholderInterviews --> marketResearch[Market Research]
+    marketResearch --> problemDefinition[Problem Definition Workshop]
+    
+    %% AI Integration - Research Enhancement
+    problemDefinition --> aiResearchEnhancement{AI Research Enhancement}
+    aiResearchEnhancement --> researchFindings[Consolidate Research Findings]
+    
+    %% Data Adequacy Check
+    researchFindings --> dataCheck{Adequate data\nand insights?}
+    dataCheck -->|No| moreResearch[Gather Additional\nInformation]
+    moreResearch --> dataCollection
+    
+    %% Return to main flow
+    dataCheck -->|Yes| nextPhase(["Continue to Analysis & Synthesis"])
+    
+    %% Click interactions
+    click mainFlow "../index.html" "Return to main workflow" _blank
+    click nextPhase "../index.html" "Continue to next phase" _blank
+    click aiResearchEnhancement "#" "AI Research Enhancement\n\nPurpose: Identify gaps in collected data and synthesize initial findings\n\nPrompt example: 'Review these stakeholder interviews and identify: 1) consistent themes, 2) potential contradictions, 3) topics mentioned by only one stakeholder, and 4) important questions that remain unanswered.'\n\nClick for more details" _self
+    
+    %% Detailed Styling and Classifications
+    classDef phase fill:#f5f5f5,stroke:#333,stroke-width:1px;
+    classDef subProcess fill:#fff8e1,stroke:#ff8f00,stroke-width:1px;
+    classDef decision fill:#e1f5fe,stroke:#0277bd,stroke-width:1px;
+    classDef aiDecision fill:#ede7f6,stroke:#4527a0,stroke-width:1px,stroke-dasharray: 5 2;
+    classDef navigation fill:#e8f5e9,stroke:#2e7d32,stroke-width:1px,stroke-dasharray: 3 3;
+    
+    %% Apply styles to nodes
+    class research phase;
+    class dataCollection,stakeholderInterviews,marketResearch,problemDefinition,researchFindings,moreResearch subProcess;
+    class dataCheck decision;
+    class aiResearchEnhancement aiDecision;
+    class mainFlow,nextPhase navigation; 

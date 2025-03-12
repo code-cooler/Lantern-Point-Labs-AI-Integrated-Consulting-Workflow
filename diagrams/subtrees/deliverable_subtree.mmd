@@ -1,0 +1,41 @@
+flowchart TD
+    %% Deliverable Production Subtree
+    
+    %% Main node connecting back to main diagram
+    mainFlow(["Back to Main Flow"]) -.-> deliverable[Deliverable Production]
+    
+    %% Detailed steps within Deliverable phase (limited to ~5 nodes)
+    deliverable --> contentOutline[Create Content Outline]
+    contentOutline --> visualizationStrategy[Visualization Strategy]
+    visualizationStrategy --> narrativeDevelopment[Narrative Development]
+    
+    %% AI Integration - Deliverable Assistant
+    narrativeDevelopment --> aiDeliverableAssistant{AI Deliverable Assistant}
+    aiDeliverableAssistant --> draft[Create Complete Draft]
+    
+    %% Review Process
+    draft --> internalReview{Internal Review\nApproved?}
+    internalReview -->|No| revise[Revise Draft]
+    revise --> draft
+    
+    %% Return to main flow
+    internalReview -->|Yes| nextPhase(["Continue to Client Engagement & Delivery"])
+    
+    %% Click interactions
+    click mainFlow "../index.html" "Return to main workflow" _blank
+    click nextPhase "../index.html" "Continue to next phase" _blank
+    click aiDeliverableAssistant "#" "AI Deliverable Assistant\n\nPurpose: Refine content and generate data visualizations for clearer communication\n\nPrompt example: 'Transform these key findings into executive-friendly visualizations that highlight the three main insights. Follow our brand guidelines for color and typography.'\n\nClick for more details" _self
+    
+    %% Detailed Styling and Classifications
+    classDef phase fill:#f5f5f5,stroke:#333,stroke-width:1px;
+    classDef subProcess fill:#fff8e1,stroke:#ff8f00,stroke-width:1px;
+    classDef decision fill:#e1f5fe,stroke:#0277bd,stroke-width:1px;
+    classDef aiDecision fill:#ede7f6,stroke:#4527a0,stroke-width:1px,stroke-dasharray: 5 2;
+    classDef navigation fill:#e8f5e9,stroke:#2e7d32,stroke-width:1px,stroke-dasharray: 3 3;
+    
+    %% Apply styles to nodes
+    class deliverable phase;
+    class contentOutline,visualizationStrategy,narrativeDevelopment,draft,revise subProcess;
+    class internalReview decision;
+    class aiDeliverableAssistant aiDecision;
+    class mainFlow,nextPhase navigation;

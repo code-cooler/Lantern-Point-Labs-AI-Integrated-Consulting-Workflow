@@ -1,0 +1,36 @@
+flowchart TD
+    %% Kickoff & Alignment Subtree
+    
+    %% Main node connecting back to main diagram
+    mainFlow(["Back to Main Flow"]) -.-> kickoff[Kickoff & Alignment]
+    
+    %% Detailed steps within Kickoff phase (limited to ~5 nodes)
+    kickoff --> planningMeeting[Conduct Planning Meeting]
+    planningMeeting --> stakeholderMapping[Stakeholder Mapping]
+    stakeholderMapping --> communicationPlan[Create Communication Plan]
+    communicationPlan --> projectPlan[Establish Detailed Project Plan]
+    
+    %% AI Integration - Planning Assistant
+    projectPlan --> aiPlanningAssistant{AI Planning Assistant}
+    aiPlanningAssistant --> finalizedPlan[Finalized Project Plan]
+    
+    %% Return to main flow
+    finalizedPlan --> nextPhase(["Continue to Research & Problem Definition"])
+    
+    %% Click interactions
+    click mainFlow "../index.html" "Return to main workflow" _blank
+    click nextPhase "../index.html" "Continue to next phase" _blank
+    click aiPlanningAssistant "#" "AI Planning Assistant\n\nPurpose: Optimize project timelines through critical path analysis\n\nPrompt example: 'Given these project milestones and team resources, identify the critical path and suggest optimal resource allocation to reduce the timeline by 15% without increasing risk.'\n\nClick for more details" _self
+    
+    %% Detailed Styling and Classifications
+    classDef phase fill:#f5f5f5,stroke:#333,stroke-width:1px;
+    classDef subProcess fill:#fff8e1,stroke:#ff8f00,stroke-width:1px;
+    classDef decision fill:#e1f5fe,stroke:#0277bd,stroke-width:1px;
+    classDef aiDecision fill:#ede7f6,stroke:#4527a0,stroke-width:1px,stroke-dasharray: 5 2;
+    classDef navigation fill:#e8f5e9,stroke:#2e7d32,stroke-width:1px,stroke-dasharray: 3 3;
+    
+    %% Apply styles to nodes
+    class kickoff phase;
+    class planningMeeting,stakeholderMapping,communicationPlan,projectPlan,finalizedPlan subProcess;
+    class aiPlanningAssistant aiDecision;
+    class mainFlow,nextPhase navigation; 

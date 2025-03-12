@@ -1,0 +1,38 @@
+flowchart TD
+    %% Implementation Support Subtree
+    
+    %% Main node connecting back to main diagram
+    mainFlow(["Back to Main Flow"]) -.-> implementation[Implementation Support]
+    
+    %% Detailed steps within Implementation phase (limited to ~5 nodes)
+    implementation --> implementationPlanning[Implementation Planning]
+    implementationPlanning --> changeManagement[Change Management]
+    changeManagement --> trainingDevelopment[Training Development]
+    
+    %% AI Integration - Implementation Assistant
+    trainingDevelopment --> aiImplementationAssistant{AI Implementation Assistant}
+    aiImplementationAssistant --> adoptionPrediction[AI: Adoption Prediction]
+    adoptionPrediction --> personalizedTraining[AI: Personalized Training Paths]
+    personalizedTraining --> implementationMonitoring[Implementation Monitoring]
+    
+    %% Return to main flow
+    implementationMonitoring --> nextPhase(["Continue to Retrospective & Knowledge Capture"])
+    
+    %% Click interactions
+    click mainFlow "../index.html" "Return to main workflow" _blank
+    click nextPhase "../index.html" "Continue to next phase" _blank
+    click aiImplementationAssistant "#" "AI Implementation Assistant\n\nPurpose: Predict adoption challenges and create personalized training paths\n\nPrompt example: 'Based on this organizational assessment, identify potential adoption barriers for each stakeholder group and suggest tailored change management approaches.'\n\nClick for more details" _self
+    
+    %% Detailed Styling and Classifications
+    classDef phase fill:#f5f5f5,stroke:#333,stroke-width:1px;
+    classDef subProcess fill:#fff8e1,stroke:#ff8f00,stroke-width:1px;
+    classDef aiDecision fill:#ede7f6,stroke:#4527a0,stroke-width:1px,stroke-dasharray: 5 2;
+    classDef aiNode fill:#f3e5f5,stroke:#6a1b9a,stroke-width:1px,stroke-dasharray: 5 2;
+    classDef navigation fill:#e8f5e9,stroke:#2e7d32,stroke-width:1px,stroke-dasharray: 3 3;
+    
+    %% Apply styles to nodes
+    class implementation phase;
+    class implementationPlanning,changeManagement,trainingDevelopment,implementationMonitoring subProcess;
+    class aiImplementationAssistant aiDecision;
+    class adoptionPrediction,personalizedTraining aiNode;
+    class mainFlow,nextPhase navigation;

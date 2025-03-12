@@ -1,0 +1,157 @@
+flowchart TD
+    %% Main workflow phases with enhanced detail
+    start([Project Start]) --> intake[Project Intake & Scoping]
+    
+    %% Expanded Intake Phase
+    intake --> initialClient[Initial Client Meeting]
+    initialClient --> requirementsGathering[Requirements Gathering]
+    requirementsGathering --> scopeDefinition[Define Preliminary Scope]
+    
+    %% AI Integration - Initial Scoping
+    scopeDefinition --> aiScopingAnalysis{AI Scoping Analysis}
+    aiScopingAnalysis -- Generate similar project patterns --> aiScopingInsights[AI: Historical Project Pattern Matching]
+    aiScopingInsights --> scopeRefinement[Refine Project Scope]
+    
+    %% Feasibility Check
+    scopeRefinement --> feasibilityCheck{Is project scope\nclear & feasible?}
+    feasibilityCheck -->|No| clarify[Clarify Requirements\nwith Client]
+    clarify --> scopeRefinement
+    
+    %% Continue to Kickoff when feasible
+    feasibilityCheck -->|Yes| kickoff[Kickoff & Alignment]
+    
+    %% Expanded Kickoff Phase
+    kickoff --> planningMeeting[Conduct Planning Meeting]
+    planningMeeting --> stakeholderMapping[Stakeholder Mapping]
+    stakeholderMapping --> communicationPlan[Create Communication Plan]
+    communicationPlan --> projectPlan[Establish Detailed Project Plan]
+    
+    %% AI Integration - Project Planning
+    projectPlan --> aiPlanningAssistant{AI Planning Assistant}
+    aiPlanningAssistant -- Optimize timeline --> aiTimelineOptimization[AI: Critical Path Analysis]
+    aiTimelineOptimization --> finalizedProjectPlan[Finalized Project Plan]
+    
+    %% Research Phase
+    finalizedProjectPlan --> research[Research & Problem Definition]
+    
+    %% Expanded Research Phase
+    research --> dataCollection[Data Collection]
+    dataCollection --> stakeholderInterviews[Stakeholder Interviews]
+    stakeholderInterviews --> marketResearch[Market Research]
+    marketResearch --> problemDefinition[Problem Definition Workshop]
+    
+    %% AI Integration - Research Enhancement
+    problemDefinition --> aiResearchEnhancement{AI Research Enhancement}
+    aiResearchEnhancement -- Identify gaps --> aiGapAnalysis[AI: Research Gap Analysis]
+    aiGapAnalysis --> aiDataSynthesis[AI: Initial Data Synthesis]
+    aiDataSynthesis --> researchConsolidation[Consolidate Research Findings]
+    
+    %% Data Adequacy Check
+    researchConsolidation --> dataCheck{Adequate data\nand insights?}
+    dataCheck -->|No| moreResearch[Gather Additional\nInformation]
+    moreResearch --> dataCollection
+    
+    %% Analysis when sufficient data
+    dataCheck -->|Yes| analysis[Analysis & Synthesis]
+    
+    %% Expanded Analysis Phase
+    analysis --> patternIdentification[Pattern Identification]
+    patternIdentification --> frameworkMapping[Framework Mapping]
+    frameworkMapping --> hypothesisDevelopment[Hypothesis Development]
+    
+    %% AI Integration - Deep Analysis
+    hypothesisDevelopment --> aiDeepAnalysis{AI Deep Analysis}
+    aiDeepAnalysis -- Generate insights --> aiInsightGeneration[AI: Complex Pattern Recognition]
+    aiInsightGeneration --> aiModelSimulation[AI: Scenario Simulation]
+    aiModelSimulation --> humanAiCollaboration[Human-AI Collaborative Analysis]
+    
+    %% Human Verification of AI Analysis
+    humanAiCollaboration --> aiVerification{AI insights\nvalid & useful?}
+    aiVerification -->|No| hypothesisDevelopment
+    aiVerification -->|Yes| insightFinalization[Finalize Key Insights]
+    
+    %% Deliverable Production
+    insightFinalization --> deliverable[Deliverable Production]
+    
+    %% Expanded Deliverable Phase
+    deliverable --> contentOutline[Create Content Outline]
+    contentOutline --> visualizationStrategy[Visualization Strategy]
+    visualizationStrategy --> narrativeDevelopment[Narrative Development]
+    
+    %% AI Integration - Deliverable Enhancement
+    narrativeDevelopment --> aiDeliverableAssistant{AI Deliverable Assistant}
+    aiDeliverableAssistant -- Enhance content --> aiContentRefiner[AI: Content Refinement]
+    aiContentRefiner --> aiVisualizationGenerator[AI: Data Visualization Generation]
+    aiVisualizationGenerator --> draft[Create Complete Draft]
+    
+    %% Review Process
+    draft --> internalReview{Internal Review\nApproved?}
+    internalReview -->|No| revise[Revise Draft]
+    revise --> draft
+    
+    %% Client Delivery
+    internalReview -->|Yes| clientDelivery[Client Engagement\n& Delivery]
+    
+    %% Expanded Client Delivery Phase
+    clientDelivery --> presentationPrep[Presentation Preparation]
+    presentationPrep --> deliveryRehearsals[Delivery Rehearsals]
+    deliveryRehearsals --> clientPresentation[Client Presentation]
+    
+    %% AI Integration - Presentation Support
+    clientPresentation --> aiPresentationSupport[AI: Real-time Q&A Support]
+    aiPresentationSupport --> clientFeedbackSession[Client Feedback Session]
+    
+    %% Client Feedback Loop
+    clientFeedbackSession --> clientFeedback{Client Feedback}
+    clientFeedback -->|Requires Changes| incorporateFeedback[Incorporate\nClient Feedback]
+    incorporateFeedback --> aiRevisionOptimizer[AI: Revision Optimization]
+    aiRevisionOptimizer --> draft
+    
+    %% Implementation Support Decision
+    clientFeedback -->|Approved| implementationNeeded{Implementation\nSupport Needed?}
+    
+    %% Expanded Implementation Support
+    implementationNeeded -->|Yes| implementation[Implementation Support]
+    implementation --> implementationPlanning[Implementation Planning]
+    implementationPlanning --> changeManagement[Change Management]
+    changeManagement --> trainingDevelopment[Training Development]
+    
+    %% AI Integration - Implementation
+    trainingDevelopment --> aiImplementationAssistant{AI Implementation Assistant}
+    aiImplementationAssistant -- Enhance adoption --> aiAdoptionPredictor[AI: Adoption Prediction]
+    aiAdoptionPredictor --> aiPersonalizedTraining[AI: Personalized Training Paths]
+    aiPersonalizedTraining --> implementationMonitoring[Implementation Monitoring]
+    
+    %% Project Conclusion
+    implementationMonitoring --> retrospective[Retrospective &\nKnowledge Capture]
+    implementationNeeded -->|No| retrospective
+    
+    %% Expanded Retrospective Phase
+    retrospective --> lessonsLearned[Lessons Learned Session]
+    lessonsLearned --> projectDocumentation[Project Documentation]
+    projectDocumentation --> knowledgeBase[Knowledge Base Update]
+    
+    %% AI Integration - Knowledge Management
+    knowledgeBase --> aiKnowledgeManager{AI Knowledge Management}
+    aiKnowledgeManager -- Enhance knowledge --> aiPatternExtraction[AI: Pattern Extraction Across Projects]
+    aiPatternExtraction --> aiKnowledgeDistillation[AI: Knowledge Distillation]
+    aiKnowledgeDistillation --> projectEnd([Project End])
+    
+    %% Detailed Styling and Classifications
+    classDef phase fill:#f5f5f5,stroke:#333,stroke-width:1px;
+    classDef decision fill:#e1f5fe,stroke:#0277bd,stroke-width:1px;
+    classDef milestone fill:#e8f5e9,stroke:#2e7d32,stroke-width:1px;
+    classDef aiNode fill:#f3e5f5,stroke:#6a1b9a,stroke-width:1px,stroke-dasharray: 5 2;
+    classDef aiDecision fill:#ede7f6,stroke:#4527a0,stroke-width:1px,stroke-dasharray: 5 2;
+    classDef subProcess fill:#fff8e1,stroke:#ff8f00,stroke-width:1px;
+    
+    %% Apply styles to nodes
+    class intake,kickoff,research,analysis,deliverable,clientDelivery,implementation,retrospective phase;
+    class initialClient,requirementsGathering,scopeDefinition,scopeRefinement,planningMeeting,stakeholderMapping,communicationPlan,projectPlan,finalizedProjectPlan,dataCollection,stakeholderInterviews,marketResearch,problemDefinition,researchConsolidation,patternIdentification,frameworkMapping,hypothesisDevelopment,insightFinalization,contentOutline,visualizationStrategy,narrativeDevelopment,presentationPrep,deliveryRehearsals,clientPresentation,clientFeedbackSession,implementationPlanning,changeManagement,trainingDevelopment,implementationMonitoring,lessonsLearned,projectDocumentation,knowledgeBase subProcess;
+    class feasibilityCheck,dataCheck,internalReview,clientFeedback,implementationNeeded decision;
+    class start,projectEnd milestone;
+    class aiScopingInsights,aiTimelineOptimization,aiGapAnalysis,aiDataSynthesis,aiInsightGeneration,aiModelSimulation,humanAiCollaboration,aiContentRefiner,aiVisualizationGenerator,aiPresentationSupport,aiRevisionOptimizer,aiAdoptionPredictor,aiPersonalizedTraining,aiPatternExtraction,aiKnowledgeDistillation aiNode;
+    class aiScopingAnalysis,aiPlanningAssistant,aiResearchEnhancement,aiDeepAnalysis,aiVerification,aiDeliverableAssistant,aiImplementationAssistant,aiKnowledgeManager aiDecision;
+    
+    %% Linkage Styling
+    linkStyle default stroke:#666,stroke-width:1.5px; 

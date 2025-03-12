@@ -1,0 +1,41 @@
+flowchart TD
+    %% Project Intake & Scoping Subtree
+    
+    %% Main node connecting back to main diagram
+    mainFlow(["Back to Main Flow"]) -.-> intake[Project Intake & Scoping]
+    
+    %% Detailed steps within Intake phase (limited to ~5 nodes)
+    intake --> initialClient[Initial Client Meeting]
+    initialClient --> requirementsGathering[Requirements Gathering]
+    requirementsGathering --> scopeDefinition[Define Preliminary Scope]
+    
+    %% AI Integration - Initial Scoping
+    scopeDefinition --> aiScopingAnalysis{AI Scoping Analysis}
+    aiScopingAnalysis --> scopeRefinement[Refine Project Scope]
+    
+    %% Feasibility Check
+    scopeRefinement --> feasibilityCheck{Is project scope\nclear & feasible?}
+    feasibilityCheck -->|No| clarify[Clarify Requirements\nwith Client]
+    clarify --> scopeRefinement
+    
+    %% Return to main flow
+    feasibilityCheck -->|Yes| nextPhase(["Continue to Kickoff & Alignment"])
+    
+    %% Click interactions
+    click mainFlow "../index.html" "Return to main workflow" _blank
+    click nextPhase "../index.html" "Continue to next phase" _blank
+    click aiScopingAnalysis "#" "AI Scoping Analysis\n\nPurpose: Generate project patterns from historical engagements\n\nPrompt example: 'Analyze our previous consulting projects in [industry] to identify similar scopes, common challenges, and typical timelines for projects focused on [objective].'\n\nClick for more details" _self
+    
+    %% Detailed Styling and Classifications
+    classDef phase fill:#f5f5f5,stroke:#333,stroke-width:1px;
+    classDef subProcess fill:#fff8e1,stroke:#ff8f00,stroke-width:1px;
+    classDef decision fill:#e1f5fe,stroke:#0277bd,stroke-width:1px;
+    classDef aiDecision fill:#ede7f6,stroke:#4527a0,stroke-width:1px,stroke-dasharray: 5 2;
+    classDef navigation fill:#e8f5e9,stroke:#2e7d32,stroke-width:1px,stroke-dasharray: 3 3;
+    
+    %% Apply styles to nodes
+    class intake phase;
+    class initialClient,requirementsGathering,scopeDefinition,scopeRefinement,clarify subProcess;
+    class feasibilityCheck decision;
+    class aiScopingAnalysis aiDecision;
+    class mainFlow,nextPhase navigation; 

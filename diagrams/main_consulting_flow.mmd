@@ -1,0 +1,40 @@
+flowchart TD
+    %% Main workflow phases with interactive linking to subtrees
+    start([Project Start]) --> intake[Project Intake & Scoping]
+    
+    %% Main Flow with Links to Subtrees
+    %% Each main phase will link to its detailed subtree
+    
+    intake --> kickoff[Kickoff & Alignment]
+    kickoff --> research[Research & Problem Definition]
+    research --> analysis[Analysis & Synthesis]
+    analysis --> deliverable[Deliverable Production]
+    deliverable --> clientDelivery[Client Engagement & Delivery]
+    clientDelivery --> implementationNeeded{Implementation\nSupport Needed?}
+    implementationNeeded -->|Yes| implementation[Implementation Support]
+    implementationNeeded -->|No| retrospective
+    implementation --> retrospective[Retrospective &\nKnowledge Capture]
+    retrospective --> projectEnd([Project End])
+    
+    %% Click interactions to open subtrees
+    click intake "subtrees/intake_subtree.html" "Click to see detailed Intake & Scoping process" _blank
+    click kickoff "subtrees/kickoff_subtree.html" "Click to see detailed Kickoff & Alignment process" _blank
+    click research "subtrees/research_subtree.html" "Click to see detailed Research & Problem Definition process" _blank
+    click analysis "subtrees/analysis_subtree.html" "Click to see detailed Analysis & Synthesis process" _blank
+    click deliverable "subtrees/deliverable_subtree.html" "Click to see detailed Deliverable Production process" _blank
+    click clientDelivery "subtrees/client_delivery_subtree.html" "Click to see detailed Client Engagement & Delivery process" _blank
+    click implementation "subtrees/implementation_subtree.html" "Click to see detailed Implementation Support process" _blank
+    click retrospective "subtrees/retrospective_subtree.html" "Click to see detailed Retrospective & Knowledge Capture process" _blank
+    
+    %% Detailed Styling and Classifications
+    classDef phase fill:#f5f5f5,stroke:#333,stroke-width:1px;
+    classDef decision fill:#e1f5fe,stroke:#0277bd,stroke-width:1px;
+    classDef milestone fill:#e8f5e9,stroke:#2e7d32,stroke-width:1px;
+    
+    %% Apply styles to nodes
+    class intake,kickoff,research,analysis,deliverable,clientDelivery,implementation,retrospective phase;
+    class implementationNeeded decision;
+    class start,projectEnd milestone;
+    
+    %% Linkage Styling
+    linkStyle default stroke:#666,stroke-width:1.5px; 
