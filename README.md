@@ -156,4 +156,4 @@ This workflow is designed to work completely offline. All dependencies (Mermaid.
 
 For additional information, see:
 - `docs/ai_consulting_guide.md` - Detailed guidance on AI integration
-- The HTML files for each subtree contain specific guidance for that phase 
+- The HTML files for each subtree contain specific guidance for that phase
