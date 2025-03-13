@@ -26,9 +26,15 @@ flowchart TD
     
     %% Click interactions
     click mainFlow "../index.html" "Return to main workflow"
-    click nextPhase "../index.html" "Continue to next phase"
-    click aiDeepAnalysis "#" "AI Deep Analysis\n\nPurpose: Recognize complex patterns and simulate different scenarios\n\nPrompt example: 'Analyze this dataset to identify patterns that support or contradict our hypothesis about [X]. Then simulate three scenarios with different assumptions about [variables] to test the robustness of our findings.'\n\nClick for more details" _self
-    click aiInsights ""analysis_ai_insights.html" "View detailed AI analysis processes"
+    click nextPhase "subtrees/deliverable_subtree.html" "Continue to next phase"
+    click aiDeepAnalysis "#" "AI Deep Analysis
+
+Purpose: Recognize complex patterns and simulate different scenarios
+
+Prompt example: 'Analyze this dataset to identify patterns that support or contradict our hypothesis about [X]. Then simulate three scenarios with different assumptions about [variables] to test the robustness of our findings.'
+
+Click for more details"
+    click aiInsights "#" "View detailed AI analysis processes"
     
     %% Detailed Styling and Classifications
     classDef phase fill:#f5f5f5,stroke:#333,stroke-width:1px;

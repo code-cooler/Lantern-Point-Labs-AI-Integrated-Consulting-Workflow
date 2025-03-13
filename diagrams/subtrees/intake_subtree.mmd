@@ -23,8 +23,14 @@ flowchart TD
     
     %% Click interactions
     click mainFlow "../index.html" "Return to main workflow"
-    click nextPhase "../index.html" "Continue to next phase"
-    click aiScopingAnalysis "#" "AI Scoping Analysis\n\nPurpose: Generate project patterns from historical engagements\n\nPrompt example: 'Analyze our previous consulting projects in [industry] to identify similar scopes, common challenges, and typical timelines for projects focused on [objective].'\n\nClick for more details" _self
+    click nextPhase "subtrees/kickoff_subtree.html" "Continue to next phase"
+    click aiScopingAnalysis "#" "AI Scoping Analysis
+
+Purpose: Generate project patterns from historical engagements
+
+Prompt example: 'Analyze our previous consulting projects in [industry] to identify similar scopes, common challenges, and typical timelines for projects focused on [objective].'
+
+Click for more details"
     
     %% Detailed Styling and Classifications
     classDef phase fill:#f5f5f5,stroke:#333,stroke-width:1px;

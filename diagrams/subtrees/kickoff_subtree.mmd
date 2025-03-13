@@ -19,8 +19,14 @@ flowchart TD
     
     %% Click interactions
     click mainFlow "../index.html" "Return to main workflow"
-    click nextPhase "../index.html" "Continue to next phase"
-    click aiPlanningAssistant "#" "AI Planning Assistant\n\nPurpose: Optimize project timelines through critical path analysis\n\nPrompt example: 'Given these project milestones and team resources, identify the critical path and suggest optimal resource allocation to reduce the timeline by 15% without increasing risk.'\n\nClick for more details" _self
+    click nextPhase "subtrees/research_subtree.html" "Continue to next phase"
+    click aiPlanningAssistant "#" "AI Planning Assistant
+
+Purpose: Optimize project timelines through critical path analysis
+
+Prompt example: 'Given these project milestones and team resources, identify the critical path and suggest optimal resource allocation to reduce the timeline by 15% without increasing risk.'
+
+Click for more details"
     
     %% Detailed Styling and Classifications
     classDef phase fill:#f5f5f5,stroke:#333,stroke-width:1px;
