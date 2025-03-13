@@ -19,14 +19,10 @@ flowchart TD
     
     %% Click interactions
     click mainFlow "../index.html" "Return to main workflow"
-    click projectEnd ""../index.html" "Return to main workflow"
-    click aiKnowledgeManager "#" " "
-
-Purpose: Extract patterns across projects and distill knowledge for future engagements
-
-Prompt example: 'Compare the outcomes of this project with our previous work in [industry]. What patterns emerge regarding successful approaches, and how might we codify these into our methodology?'
-
-Click for more details"
+    click projectEnd "../index.html" "Return to main workflow"
+    click aiKnowledgeManager "#" "Purpose: Extract patterns across projects and distill knowledge for future engagements\n\nPrompt example: 'Compare the outcomes of this project with our previous work in [industry]. What patterns emerge regarding successful approaches, and how might we codify these into our methodology?'"
+    click patternExtraction "#" "Purpose: Identify patterns across multiple projects\n\nPrompt example: 'What common client challenges have we encountered across our last 5 projects in this industry?'"
+    click knowledgeDistillation "#" "Purpose: Condense learnings into shareable knowledge\n\nPrompt example: 'Create a concise summary of best practices from this project that we can add to our knowledge base.'"
     
     %% Detailed Styling and Classifications
     classDef phase fill:#f5f5f5,stroke:#333,stroke-width:1px;
