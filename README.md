@@ -29,6 +29,23 @@ Alternatively, you can start a local server:
 
 Then open http://localhost:8090/diagrams/index.html in your browser.
 
+## Sharing with Others
+
+If you want to share this workflow with others without requiring them to download files or run commands:
+
+1. **Deploy to a hosting service** using one of our deployment scripts:
+   ```bash
+   # For GitHub Pages deployment:
+   ./scripts/deploy_to_github_pages.sh
+   
+   # For Netlify deployment (easiest option):
+   ./scripts/deploy_to_netlify.sh
+   ```
+
+2. **Share the single URL** with anyone you want to have access
+
+For detailed deployment instructions, see [docs/deployment_guide.md](docs/deployment_guide.md).
+
 ## Workflow Structure
 
 The consulting workflow consists of the following phases:

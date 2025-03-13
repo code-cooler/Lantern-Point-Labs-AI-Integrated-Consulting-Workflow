@@ -1,0 +1,21 @@
+# Netlify configuration for Consulting Workflow
+
+# Basic site settings
+[build]
+  publish = "."
+
+# Redirect for root URL
+[[redirects]]
+  from = "/"
+  to = "/diagrams/index.html"
+  status = 302
+  force = true
+
+# Set security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
